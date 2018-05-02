@@ -5,10 +5,13 @@
 #include <iomanip>
 #pragma once
 
+const int N = 100;
+
 struct COMP{
 	std::string ProcName; // Brand name
 	std::string ProcType; // Specification
 	std::string Graphics; // Graphic Card
+	double GraphicVolume;
 	double ClockSpeed;
 	double RAM;
 	double Storage;
@@ -35,3 +38,34 @@ class workComputers {
 		std::vector<RECORD> CapabilitiesComp;
 };
 
+class Perechen{
+	public:
+		Perechen() : pBlen(0), pPTlen(0), pVVlen(0) {}
+		~Perechen() {}
+		Perechen(Perechen&);
+		Perechen operator=(Perechen&);
+		
+		void showFirstPerech();
+		void showSecondPerech();
+		void showThirdPerech();
+		void sortFirstPerech();
+		void sortSecondPerech();
+		void sortThirdPerech();
+		void saveFirstPerech();
+		void saveSecondPerech();
+		void saveThirdPerech();
+	private:
+		int pBlen, pPTlen, pVVlen;
+		RECORD perechenBrands [N];
+		RECORD perechenProcTypes [N];
+		RECORD perechenVideocardVolume [N];
+
+};
+
+class aggregate{
+	public:
+
+	private:
+		workComputers clWorkComp [N];
+		Perechen clPerech [N];
+};
