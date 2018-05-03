@@ -23,6 +23,16 @@ struct RECORD{
 	int CompInStock;
 };
 
+struct BrandPerech{
+	std::string ProcName;
+	int Count;
+};
+
+struct TypeProcPerech{
+	std::string ProcType;
+	int count;
+};
+
 class workComputers {
 	public:
 		void InputFromFile();
