@@ -30,7 +30,7 @@ struct BrandPerech{
 
 struct TypeProcPerech{
 	std::string ProcType;
-	int count;
+	int Count;
 };
 
 class workComputers {
