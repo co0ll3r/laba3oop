@@ -50,7 +50,7 @@ class workComputers {
 
 class Perechen{
 	public:
-		Perechen() : pBlen(0), pPTlen(0), pVVlen(0) {}
+		Perechen() : pBrandlen(0), pProclen(0), pVideolen(0) {}
 		~Perechen() {}
 		Perechen(Perechen&);
 		Perechen operator=(Perechen&);
@@ -65,7 +65,7 @@ class Perechen{
 		void saveSecondPerech();
 		void saveThirdPerech();
 	private:
-		int pBlen, pPTlen, pVVlen;
+		int pBrandlen, pProclen, pVideolen;
 		RECORD perechenBrands [N];
 		RECORD perechenProcTypes [N];
 		RECORD perechenVideocardVolume [N];
@@ -74,8 +74,19 @@ class Perechen{
 
 class aggregate{
 	public:
-
+		aggregate() {}	
+		~aggregate() {}
+		aggregate(const aggregate&);
+		aggregate& operator=(const aggregate&);
+		
+		void InputFromFileForAggregate(); // Считатать из файла методом класса, составить перечень(makePerech)
+		void OutputInFileForAggregate(); // используй два метода от класса и перечня 
+		void showAggregate();
+		void addFieldAggregate();
+		void deleteFieldAggregate();
+		void sortAggregate();
+		void makePerechen();
 	private:
-		workComputers clWorkComp [N];
-		Perechen clPerech [N];
+		workComputers clWorkComp;
+		Perechen clPerech ;
 };
