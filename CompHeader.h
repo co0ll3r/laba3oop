@@ -33,6 +33,11 @@ struct TypeProcPerech{
 	int Count;
 };
 
+struct VideocardsPerech{
+ 	double GraphicVolume;
+	int Count;
+}; 
+
 class workComputers {
 	public:
 		void InputFromFile();
@@ -58,18 +63,17 @@ class Perechen{
 		void showFirstPerech();
 		void showSecondPerech();
 		void showThirdPerech();
-		void sortFirstPerech();
-		void sortSecondPerech();
-		void sortThirdPerech();
+		void sortProcTypeFirstPerech();
+		void sortCountSecondPerech();
+		void sortVideoVolumeThirdPerech();
 		void saveFirstPerech();
 		void saveSecondPerech();
 		void saveThirdPerech();
 	private:
 		int pBrandlen, pProclen, pVideolen;
-		RECORD perechenBrands [N];
-		RECORD perechenProcTypes [N];
-		RECORD perechenVideocardVolume [N];
-
+		BrandPerech perechenBrands [N];
+		TypeProcPerech perechenProcTypes [N];
+		VideocardsPerech perechenVideocardVolume [N];
 };
 
 class aggregate{
