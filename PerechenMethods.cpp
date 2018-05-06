@@ -44,7 +44,7 @@ void saveFirstPerech(){
 		std::cout << file << " не удалось открыть файл\n";
 		return;
 	}
-	fout << 
+//	fout <<   доделая после теста вывода в окно 
 }
 
 // +2 more methods
