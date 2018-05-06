@@ -71,6 +71,20 @@ class Perechen{
 		void saveFirstPerech();
 		void saveSecondPerech();
 		void saveThirdPerech();
+
+		void setpBrandlen(int i) {pBrandlen = i;}
+		void setpProclen(int i) {pProclen = i;}
+		void setpVideolen(int i) {pVideolen = i;}
+		void setperechProcName(std::string s, int i) {perechenBrands[i].ProcName = s;}
+		void setperechProcTypes(std::string s, int i) {perechenProcTypes[i].ProcType = s;}
+		void setperechVideoVol(double s, int i) {perechenVideocardVolume[i].GraphicVolume = s;}
+		void setC1(int k, int i) {
+			perechenBrands[i].Count = k;}
+		void setC2(int k, int i) {
+			perechenProcTypes[i].Count = k;}
+		void setC3(int k, int i) {
+			perechenVideocardVolume[i].Count = k;}
+
 	private:
 		int pBrandlen, pProclen, pVideolen;
 		BrandPerech perechenBrands [N];

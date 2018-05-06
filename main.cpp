@@ -35,8 +35,11 @@ void GetMenu(workComputers& ExampleComputer){
 int main()
 {
 	workComputers example;
-	while(1){
-		GetMenu(example);
-	}
+	aggregate go;
+	go.InputFromFileForAggregate();
+	go.showAggregate();
+	std::cout << "check\n";
+	
+
 	return 0;
 }
