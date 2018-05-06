@@ -49,6 +49,8 @@ class workComputers {
 		void SortProcTypeAndClock();
 		void SortProcName();
 		void SortPrice();
+
+		std::vector<RECORD>& getMassive();
 	private:
 		std::vector<RECORD> CapabilitiesComp;
 };

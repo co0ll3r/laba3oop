@@ -186,3 +186,8 @@ void workComputers::SortPrice(){
 	} while(flag);
 	showInfo();
 }
+
+
+std::vector<RECORD>& workComputers::getMassive(){
+	return this -> CapabilitiesComp;
+}
