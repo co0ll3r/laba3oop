@@ -4,7 +4,7 @@
 34000 1 Intel Core2Duo 3.4 AMD_Radeon_HD_8450 2 5 410 M
 30000 1 Intel Core2Duo 3.1 AMD_Radeon_HD_8450 2 4 600 M
 33000 1 Intel Core2Duo 3.0 AMD_Radeon_HD_8450 2 2.5 450 M
-20020 5 Amd Ryzen-1200 2.8 AMD_Radeon_HD_3450 1 2 300 P
+20020 5 Amd Ryzen_1200 2.8 AMD_Radeon_HD_3450 1 2 300 P
 80000 6 Intel Core_i7_7600K 4.3 NVIDIA_GTX_1080ti 12 32 2048 U
 25000 3 Bered HAx2 4.3 AnalogVideo 0.01 4 200 T
 23000 4 Bered HCx3 2.2 AnalogVideo 0.01 5 270 E
@@ -12,4 +12,7 @@
 150000 100 Intamd Core_i99 17 Radeon 64 24 1237 S 
 50000 1 Amd Ryzen_1300 3.3 Radeon_570x 8 16 2048 A
 75000 2 Intel Core_i5_6600 3.5 Nvidia_GTX1060 6 12 3096 R
-50000 5 Amd Ryzen_1700 4.2 Radeon_520 16 1024 
+50000 5 Amd Ryzen_1700 4.2 Radeon_520 5 16 1024 E
+65432 2 Amd Ryzen_1700 3.0 Radeon_510 3 15 1000 A
+50000 1 Amd Ryzen_1300 3.3 Radeon_560x 6 16 2048 W
+50000 1 Amd Ryzen_1300 3.3 Radeon_570x 8 16 2048 
