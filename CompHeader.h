@@ -3,9 +3,12 @@
 #include <string>
 #include <vector>
 #include <iomanip>
+#include <set>
 #pragma once
 
 const int N = 100;
+class Perechen;
+class workComputers;
 
 struct COMP{
 	std::string ProcName; // Brand name
@@ -31,6 +34,14 @@ struct BrandPerech{
 struct TypeProcPerech{
 	std::string ProcType;
 	int Count;
+	TypeProcPerech& operator=(TypeProcPerech& c){
+		if (&c != this)
+		{
+			ProcType = c.ProcType;
+			Count = c.Count;
+		}
+		return *this;
+	}
 };
 
 struct VideocardsPerech{
@@ -49,6 +60,8 @@ class workComputers {
 		void SortProcTypeAndClock();
 		void SortProcName();
 		void SortPrice();
+
+		friend void makePerechen1(workComputers clWorkComp, Perechen& clPerech);
 
 		std::vector<RECORD>& getMassive();
 	private:
@@ -72,6 +85,8 @@ class Perechen{
 		void saveSecondPerech();
 		void saveThirdPerech();
 
+		friend void makePerechen1(workComputers clWorkComp, Perechen& clPerech);
+
 		void setpBrandlen(int i) {pBrandlen = i;}
 		void setpProclen(int i) {pProclen = i;}
 		void setpVideolen(int i) {pVideolen = i;}
@@ -84,6 +99,8 @@ class Perechen{
 			perechenProcTypes[i].Count = k;}
 		void setC3(int k, int i) {
 			perechenVideocardVolume[i].Count = k;}
+
+		BrandPerech* getBrands() { return this ->perechenBrands;}
 
 	private:
 		int pBrandlen, pProclen, pVideolen;
@@ -99,13 +116,13 @@ class aggregate{
 		aggregate(const aggregate&);
 		aggregate& operator=(const aggregate&);
 		
-		void InputFromFileForAggregate(); // Считатать из файла методом класса, составить перечень(makePerech)
+		void InputFromFileForAggregate(); //+ Считатать из файла методом класса, составить перечень(makePerech)
 		void OutputInFileForAggregate(); // используй два метода от класса и перечня 
-		void showAggregate();
-		void addFieldAggregate();
-		void deleteFieldAggregate();
-		void sortAggregate();
-		void makePerechen();
+		void showAggregate(); //+
+		void addFieldAggregate();//mb+
+		void deleteFieldAggregate();//mb+
+		void sortAggregate(); //+
+		void makePerechen(); //+
 	private:
 		workComputers clWorkComp;
 		Perechen clPerech ;

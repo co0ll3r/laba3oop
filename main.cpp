@@ -7,7 +7,9 @@ void GetMenu(workComputers& ExampleComputer){
 	std::cout << "1. Загрузка файла\n2. Сохранение результатов обработки в файл\n" <<
 		     "3. Добавление записи\n4. Удаление записи\n" <<
 		     "5. Вывод на экран\n6. Сортировка по типу процессора и тактовой частоте\n" <<
-		     "7. Алфавитная сортировка по названию марки\n8. Числовая сортировка по цене\n"; 
+		     "7. Алфавитная сортировка по названию марки\n8. Числовая сортировка по цене\n" <<
+		     "9. Показать 1 перечень имен процессора\n10. Показать 2 перечень типов процессора\n";
+
 	while (SwitchChoose == 1){
 		std::cout << "Введите пункт меню: ";
 		std::cin >> SwitchChoose;
@@ -36,7 +38,17 @@ int main()
 {
 	workComputers example;
 	aggregate go;
+	Perechen lel;
 	go.InputFromFileForAggregate();
+	go.makePerechen();
+	
+//	go.addFieldAggregate();
+//	go.addFieldAggregate();
+	go.sortAggregate();
+	go.deleteFieldAggregate();
+
+	go.OutputInFileForAggregate();
+
 	go.showAggregate();
 	std::cout << "check\n";
 	
