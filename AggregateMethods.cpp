@@ -1,57 +1,13 @@
 #include "CompHeader.h" 
 
 void aggregate::makePerechen(){
-	// для названий процов
-	std::set<std::string> UniqueNames;
+// для названий процов
 	makePerechen1(clWorkComp, clPerech);
-
-
-/*	for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-		UniqueNames.insert(clWorkComp.getMassive()[i].CompInfo.ProcName);
-	int nomerMass = 0, counter = 1;
-	clPerech.setpBrandlen(UniqueNames.size());
-	for (auto a : UniqueNames)
-	{
-//		std::cout << "\nCH " << a << '\n';
-		clPerech.setperechProcName(a, nomerMass);
-		for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-			if (a == clWorkComp.getMassive()[i].CompInfo.ProcName)
-				clPerech.setC1(counter++, nomerMass);
-		counter = 1;
-		nomerMass++;
-	}*/
 // для типов проца ниже	
-	UniqueNames.clear();
-int	nomerMass = 0;
-int	counter = 1;
-	for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-		UniqueNames.insert(clWorkComp.getMassive()[i].CompInfo.ProcType);
-	clPerech.setpProclen(UniqueNames.size());
-	for (auto a : UniqueNames)
-	{
-//		std::cout << "\nCH2 " << a << '\n';
-		clPerech.setperechProcTypes(a, nomerMass);
-		for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-			if (a == clWorkComp.getMassive()[i].CompInfo.ProcType)
-				clPerech.setC2(counter++, nomerMass);
-		counter = 1;
-		nomerMass++;
-	}
+	makePerechen2(clWorkComp, clPerech);
 // для размеров видяхи
-	std::set<double> VolumePer;
- 	nomerMass = 0; counter = 1;
-	for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-		VolumePer.insert(clWorkComp.getMassive()[i].CompInfo.GraphicVolume);
-	clPerech.setpVideolen(VolumePer.size());
-	for (auto a : VolumePer){
-//		std::cout << "\nCH3 " << a << '\n';
-		clPerech.setperechVideoVol(a, nomerMass);	
-		for (unsigned i = 0; i < clWorkComp.getMassive().size(); i++)
-			if (a == clWorkComp.getMassive()[i].CompInfo.GraphicVolume)
-				clPerech.setC3(counter++, nomerMass);
-		counter = 1;
-		nomerMass++;
-	}
+	makePerechen3(clWorkComp, clPerech);
+	this -> sortAggregate();
 } 
 
 void aggregate::showAggregate(){
@@ -67,6 +23,7 @@ void aggregate::showAggregate(){
 void aggregate::sortAggregate(){
 	clPerech.sortProcTypeFirstPerech();
 	clPerech.sortCountSecondPerech();
+	clPerech.sortVideoVolumeThirdPerech();
 }
 
 void aggregate::InputFromFileForAggregate(){
@@ -85,5 +42,16 @@ void aggregate::deleteFieldAggregate(){
 }
 
 void aggregate::OutputInFileForAggregate(){
+	clWorkComp.OutputInFile();
 	clPerech.saveFirstPerech();
+	clPerech.saveSecondPerech();
+	clPerech.saveThirdPerech();
+}
+
+workComputers& aggregate::mOwc(){
+	return this -> clWorkComp;
+}
+
+Perechen& aggregate::mOp(){
+	return this -> clPerech;
 }

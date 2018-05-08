@@ -9,6 +9,7 @@
 const int N = 100;
 class Perechen;
 class workComputers;
+class aggregate;
 
 struct COMP{
 	std::string ProcName; // Brand name
@@ -62,7 +63,8 @@ class workComputers {
 		void SortPrice();
 
 		friend void makePerechen1(workComputers clWorkComp, Perechen& clPerech);
-
+		friend void makePerechen2(workComputers clWorkComp, Perechen& clPerech);
+		friend void makePerechen3(workComputers clWorkComp, Perechen& clPerech);
 		std::vector<RECORD>& getMassive();
 	private:
 		std::vector<RECORD> CapabilitiesComp;
@@ -82,11 +84,12 @@ class Perechen{
 		void sortCountSecondPerech();
 		void sortVideoVolumeThirdPerech();
 		void saveFirstPerech();
-		void saveSecondPerech();
-		void saveThirdPerech();
+		void saveSecondPerech(); //netu
+		void saveThirdPerech();//netu
 
 		friend void makePerechen1(workComputers clWorkComp, Perechen& clPerech);
-
+		friend void makePerechen2(workComputers clWorkComp, Perechen& clPerech);
+		friend void makePerechen3(workComputers clWorkComp, Perechen& clPerech);
 		void setpBrandlen(int i) {pBrandlen = i;}
 		void setpProclen(int i) {pProclen = i;}
 		void setpVideolen(int i) {pVideolen = i;}
@@ -113,16 +116,19 @@ class aggregate{
 	public:
 		aggregate() {}	
 		~aggregate() {}
-		aggregate(const aggregate&);
-		aggregate& operator=(const aggregate&);
+		aggregate(const aggregate&); 
+		aggregate& operator=(const aggregate&); 
 		
 		void InputFromFileForAggregate(); //+ Считатать из файла методом класса, составить перечень(makePerech)
-		void OutputInFileForAggregate(); // используй два метода от класса и перечня 
+		void OutputInFileForAggregate(); //+ используй два метода от класса и перечня 
 		void showAggregate(); //+
-		void addFieldAggregate();//mb+
-		void deleteFieldAggregate();//mb+
+		void addFieldAggregate();//+
+		void deleteFieldAggregate();//+
 		void sortAggregate(); //+
 		void makePerechen(); //+
+
+		workComputers& mOwc();
+		Perechen& mOp();
 	private:
 		workComputers clWorkComp;
 		Perechen clPerech ;

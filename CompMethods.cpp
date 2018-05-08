@@ -77,8 +77,7 @@ void workComputers::Add_comp(){
 }
 
 void workComputers::Delete_comp(){
-	unsigned n;
-	char ch;
+	unsigned n; char ch;
 	showInfo();
 	std::cout << "Введите номер строки для удаления: ";
 	std::cin >> n;
@@ -186,7 +185,6 @@ void workComputers::SortPrice(){
 	} while(flag);
 	showInfo();
 }
-
 
 std::vector<RECORD>& workComputers::getMassive(){
 	return this -> CapabilitiesComp;
